@@ -45,7 +45,8 @@ public class GithubQuerier {
             JSONArray commits = event.getJSONObject("payload").getJSONArray("commits");
 
             sb.append("<div class=\"row\">");
-            sb.append("<div class=\"col-md-8\">");
+            sb.append("<div class=\"col-md-6\">");
+
             // Add type of event as header
             sb.append("<h3 class=\"type\">");
             sb.append(type);
@@ -59,17 +60,14 @@ public class GithubQuerier {
             sb.append("<div id=event-" + i + " class=\"collapse\" style=\"height: auto;\"> <pre>");
             sb.append(event.toString());
             sb.append("</pre> </div>");
-            sb.append("</div>");
-            sb.append("</div>");
-            // Add table for SHA and message
-
-            sb.append("<div class=\"container col-md-8\">");
+            // Add repo name
             sb.append("<h4>Repository: <a href='" + repoURL + "' target='blank'>" + repo + "</a></h4>");
             sb.append("<h4>Commits</h4>");
             sb.append("<p>Click on the row to see detailed commit information</p>");
+            // Add SHA and message
             sb.append("<table class=\"table table-hover\">");
             sb.append("<thead>");
-            sb.append("<tr>");
+            sb.append("<tr class=\"info\">");
             sb.append("<th>SHA</th>");
             sb.append("<th>Message</th>");
             sb.append("</tr>");
@@ -89,9 +87,10 @@ public class GithubQuerier {
             }
             sb.append("</tbody>");
             sb.append("</table>");
-            sb.append("</div>");
+            sb.append("</div>"); // column
+            sb.append("</div>"); // row
         }
-        sb.append("</div>"); // row
+        sb.append("</div>");
         return sb.toString();
     }
 
