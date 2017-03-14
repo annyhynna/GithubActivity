@@ -34,6 +34,18 @@ public class GithubQuerier {
             Date date = inFormat.parse(creationDate);
             String formatted = outFormat.format(date);
 
+            // Get repo name
+            String repo = event.getJSONObject("repo").getString("name");
+            String repoURL = "https://github.com/" + repo;
+
+            List<String> shas = new ArrayList<String>();
+            List<String> messages = new ArrayList<String>();
+
+            // Get commits info, which contains SHA and message
+            JSONArray commits = event.getJSONObject("payload").getJSONArray("commits");
+
+            sb.append("<div class=\"row\">");
+            sb.append("<div class=\"col-md-8\">");
             // Add type of event as header
             sb.append("<h3 class=\"type\">");
             sb.append(type);
@@ -47,8 +59,39 @@ public class GithubQuerier {
             sb.append("<div id=event-" + i + " class=\"collapse\" style=\"height: auto;\"> <pre>");
             sb.append(event.toString());
             sb.append("</pre> </div>");
+            sb.append("</div>");
+            sb.append("</div>");
+            // Add table for SHA and message
+
+            sb.append("<div class=\"container col-md-8\">");
+            sb.append("<h4>Repository: <a href='" + repoURL + "' target='blank'>" + repo + "</a></h4>");
+            sb.append("<h4>Commits</h4>");
+            sb.append("<p>Click on the row to see detailed commit information</p>");
+            sb.append("<table class=\"table table-hover\">");
+            sb.append("<thead>");
+            sb.append("<tr>");
+            sb.append("<th>SHA</th>");
+            sb.append("<th>Message</th>");
+            sb.append("</tr>");
+            sb.append("</thead>");
+            sb.append("<tbody>");
+            // Add sha and message
+            for (int j = 0; j < commits.length(); j++) {
+                JSONObject commit = commits.getJSONObject(j);
+                String sha = commit.getString("sha");
+                String message = commit.getString("message");
+                String commitURL = repoURL + "/commit/" + sha;
+
+                sb.append("<tr onclick=\"window.open('" + commitURL + "', '_blank');\">");
+                sb.append("<td>" + sha.substring(0, 8) + "</td>");
+                sb.append("<td>" + message + "</td>");
+                sb.append("</tr>");
+            }
+            sb.append("</tbody>");
+            sb.append("</table>");
+            sb.append("</div>");
         }
-        sb.append("</div>");
+        sb.append("</div>"); // row
         return sb.toString();
     }
 
@@ -57,10 +100,19 @@ public class GithubQuerier {
         String url = BASE_URL + user + "/events";
         System.out.println(url);
         JSONObject json = Util.queryAPI(new URL(url));
-        System.out.println(json);
+//        System.out.println(json);
         JSONArray events = json.getJSONArray("root");
-        for (int i = 0; i < events.length() && i < 10; i++) {
-            eventList.add(events.getJSONObject(i));
+        int count = 0;
+        for (int i = 0; i < events.length(); i++) {
+            if (events.getJSONObject(i).get("type").equals("PushEvent")){
+//                JSONObject commit = events.getJSONObject(i).getJSONObject("payload").getJSONArray("commits").getJSONObject(0);
+//                System.out.println("SHA: " + commit.getString("sha"));
+//                System.out.println("MSG: " + commit.getString("message"));
+                eventList.add(events.getJSONObject(i));
+                count++;
+            }
+            if (count == 10)
+                break;
         }
         return eventList;
     }
