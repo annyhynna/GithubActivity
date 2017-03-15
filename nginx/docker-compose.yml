@@ -1,13 +1,14 @@
 version: '2'
 services:
-  activity:
+  web1:
+    ports:
+     - "8080"
     image: activity
 
-  ng:
+  proxy:
     ports:
      - "8888:8888"
     image: ng
-    links:
-     - activity
+
 
    
