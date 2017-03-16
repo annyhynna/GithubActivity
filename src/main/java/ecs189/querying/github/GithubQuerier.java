@@ -96,23 +96,26 @@ public class GithubQuerier {
 
     private static List<JSONObject> getEvents(String user) throws IOException {
         List<JSONObject> eventList = new ArrayList<JSONObject>();
-        String url = BASE_URL + user + "/events";
-        System.out.println(url);
-        JSONObject json = Util.queryAPI(new URL(url));
-//        System.out.println(json);
-        JSONArray events = json.getJSONArray("root");
-        int count = 0;
-        for (int i = 0; i < events.length(); i++) {
-            if (events.getJSONObject(i).get("type").equals("PushEvent")){
-//                JSONObject commit = events.getJSONObject(i).getJSONObject("payload").getJSONArray("commits").getJSONObject(0);
-//                System.out.println("SHA: " + commit.getString("sha"));
-//                System.out.println("MSG: " + commit.getString("message"));
-                eventList.add(events.getJSONObject(i));
-                count++;
-            }
-            if (count == 10)
+        int pageCount = 0;
+        while (true){
+            String url = BASE_URL + user + "/events?per_page=100&page=" + pageCount;
+            System.out.println(url);
+            JSONObject json = Util.queryAPI(new URL(url));
+            if (json.getJSONArray("root").length() == 0)
                 break;
+            JSONArray events = json.getJSONArray("root");
+            int count = 0;
+            for (int i = 0; i < events.length(); i++) {
+                if (events.getJSONObject(i).get("type").equals("PushEvent")){
+                    eventList.add(events.getJSONObject(i));
+                    count++;
+                }
+                if (count == 10)
+                    break;
+            }
+            pageCount++;
         }
+
         return eventList;
     }
 }
