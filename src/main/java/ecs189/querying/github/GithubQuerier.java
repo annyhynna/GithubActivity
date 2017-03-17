@@ -104,14 +104,14 @@ public class GithubQuerier {
             if (json.getJSONArray("root").length() == 0)
                 break;
             JSONArray events = json.getJSONArray("root");
-            int count = 0;
+            int eventCount = 0;
             for (int i = 0; i < events.length(); i++) {
                 if (events.getJSONObject(i).get("type").equals("PushEvent")){
                     eventList.add(events.getJSONObject(i));
-                    count++;
+                    eventCount++;
                 }
-                if (count == 10)
-                    break;
+                if (eventCount == 10)
+                    return eventList;
             }
             pageCount++;
         }

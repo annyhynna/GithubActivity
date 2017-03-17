@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fcce467-84d3-48ec-821d-a99f2fa2fd52" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.SUBMISSION" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/HW4/README" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/nginx/Dockerfile" afterPath="$PROJECT_DIR$/HW4/nginx-rev/Dockerfile" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/nginx/README" afterPath="$PROJECT_DIR$/HW4/nginx-rev/README" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/nginx/cleanup.sh" afterPath="$PROJECT_DIR$/HW4/cleanup.sh" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/nginx/docker-compose.yml" afterPath="$PROJECT_DIR$/HW4/docker-compose.yml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/nginx/dorun.sh" afterPath="$PROJECT_DIR$/HW4/dorun.sh" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/nginx/doswap.sh" afterPath="$PROJECT_DIR$/HW4/doswap.sh" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/nginx/init.sh" afterPath="$PROJECT_DIR$/HW4/nginx-rev/init.sh" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/nginx/nginx.conf" afterPath="$PROJECT_DIR$/HW4/nginx-rev/nginx.conf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/nginx/swap1.sh" afterPath="$PROJECT_DIR$/HW4/nginx-rev/swap1.sh" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/nginx/swap2.sh" afterPath="$PROJECT_DIR$/HW4/nginx-rev/swap2.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activity/activity.war" afterPath="$PROJECT_DIR$/activity/activity.war" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ecs189/querying/github/GithubQuerier.java" afterPath="$PROJECT_DIR$/src/main/java/ecs189/querying/github/GithubQuerier.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -52,21 +42,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.SUBMISSION" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.SUBMISSION">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="87" lean-forward="false" selection-start-line="12" selection-start-column="87" selection-end-line="12" selection-end-column="87" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="doswap.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HW4/doswap.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="443">
               <caret line="44" column="28" lean-forward="true" selection-start-line="44" selection-start-column="28" selection-end-line="44" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GithubQuerier.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ecs189/querying/github/GithubQuerier.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="536">
+              <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -117,9 +107,9 @@
         <option value="$PROJECT_DIR$/nginx/docker-compose.yml" />
         <option value="$PROJECT_DIR$/nginx/Dockerfile" />
         <option value="$PROJECT_DIR$/nginx/doswap.sh" />
-        <option value="$PROJECT_DIR$/src/main/java/ecs189/querying/github/GithubQuerier.java" />
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/README.SUBMISSION" />
+        <option value="$PROJECT_DIR$/src/main/java/ecs189/querying/github/GithubQuerier.java" />
       </list>
     </option>
   </component>
@@ -926,7 +916,7 @@
       <workItem from="1489455377136" duration="27746000" />
       <workItem from="1489685680382" duration="5192000" />
       <workItem from="1489701111406" duration="2249000" />
-      <workItem from="1489729953049" duration="3281000" />
+      <workItem from="1489729953049" duration="5490000" />
     </task>
     <task id="LOCAL-00001" summary="Add repo name, sha, message, and pretty formatting">
       <created>1489522202810</created>
@@ -963,11 +953,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489702746391</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Reorganize folders and add README.SUBMISSION">
+      <created>1489733339460</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1489733339460</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72563000" />
+    <option name="totallyTimeSpent" value="74772000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -996,12 +993,13 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3994528" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22683264" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24005488" sideWeight="0.49791232" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918397" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23928078" sideWeight="0.49791232" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.49791232" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1502146" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -1013,7 +1011,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32784638" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1030,7 +1027,8 @@
     <MESSAGE value="Overwrite files with new provided files" />
     <MESSAGE value="Update doswap.sh" />
     <MESSAGE value="Deal with pagination" />
-    <option name="LAST_COMMIT_MESSAGE" value="Deal with pagination" />
+    <MESSAGE value="Reorganize folders and add README.SUBMISSION" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reorganize folders and add README.SUBMISSION" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1324,14 +1322,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ecs189/querying/github/GithubQuerier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="102" column="58" lean-forward="false" selection-start-line="102" selection-start-column="58" selection-end-line="102" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HW4/nginx-rev/swap1.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1383,7 +1373,15 @@
     <entry file="file://$PROJECT_DIR$/README.SUBMISSION">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="12" column="87" lean-forward="false" selection-start-line="12" selection-start-column="87" selection-end-line="12" selection-end-column="87" />
+          <caret line="12" column="34" lean-forward="false" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ecs189/querying/github/GithubQuerier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
           <folding />
         </state>
       </provider>
