@@ -9,9 +9,7 @@ For `swap2.sh`, the address changes from `http://web1:8080/activity/` to `http:/
 
 2. <b>HW4/doswap.sh</b> (takes one argument of the new-image-name that we want to swap to)<br />
     Compile the part C1 commands into this single shell script.
-    The shell first kills the running container (either web1 or web2), then run the new container with the image
-    provided in the argument. It then execute the corresponding swap shell (swap1.sh if argument is activity;
-    swap2.sh if argument is new-activity). Finally, it cleans up the exited containers.
+    The shell first runs new container with the image provided in the argument. It then execute the corresponding swap          shell (`swap1.sh` if argument is activity; `swap2.sh` if argument is new-activity). It then kills the running container        (either web1 or web2), and cleans up the exited containers.
 
 B. Build the following images:
 1. `ng` (built from provided nginx-rev folder)
