@@ -23,17 +23,16 @@ if [ "$1" = "new-activity" ]
 then
     NAME=web2
     SWAPFILE=swap2
+    KILL=web1
 elif [ "$1" = "activity" ]
 then
     NAME=web1
     SWAPFILE=swap1
+    KILL=web2
 fi
 
 if containerNotExist $NAME
 then
-    killitif web1
-    killitif web2
-
     # Run the new container we want to swap to
     echo "building $1"
     docker run -d -P --network ecs189_default --name $NAME $1
@@ -41,6 +40,9 @@ then
     # Run corresponding swap shell script
     echo $SWAPFILE
     docker exec ecs189_proxy_1 /bin/bash /bin/$SWAPFILE.sh
+
+    # Kill the other container
+    killitif $KILL
 else
     echo "container $1 already running"
 fi
