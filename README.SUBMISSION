@@ -29,8 +29,10 @@ B. Build the following images:
 
 C1. To do the hot-swap (without doswap.sh)
     1. Run dorun.sh, which starts the docker-compose.yml and the init.sh to run two containers (ng and web1).
+    ```
     Command: cd ~IdeaProjects/GithubActivity/HW4
               ./dorun.sh
+    ```
 
     2. Run image "new-activity" in a container named "web2" with network "ecs189_default"
     Command: docker run -d -P --network ecs189_default --name web2 new-activity
