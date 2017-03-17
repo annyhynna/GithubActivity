@@ -7,32 +7,39 @@ function killitif {
       echo "killing older version of $1"
       docker rm -f `docker ps -a | grep $1  | sed -e 's: .*$::'`
     fi
- }
+}
 
 if [ "$1" = "new-activity" ]
 then
     NAME=web2
-    SWAPFILE=swap2
+    SWAP=swap2
     KILL=web1
 elif [ "$1" = "activity" ]
 then
     NAME=web1
-    SWAPFILE=swap1
+    SWAP=swap1
     KILL=web2
 else
     NAME=$1
+    KILL=$(docker ps -a -f "name=web" | grep -oh "\w*web\w")
 fi
 
 # Kill the new container if it previously exists
 killitif $NAME
 
 # Run the new container we want to swap to
-echo "building $1"
+echo "running new $1"
 docker run -d -P --network ecs189_default --name $NAME $1
 
 # Run corresponding swap shell script
-echo $SWAPFILE
-docker exec ecs189_proxy_1 /bin/bash /bin/$SWAPFILE.sh
+sleep 2 && docker exec ecs189_proxy_1 /bin/bash /bin/$SWAP.sh
 
 # Kill the old container
 killitif $KILL
+
+# Clean up all other exited process
+EXITED=$(docker ps -qa --no-trunc --filter "status=exited")
+if [ ! -z "$EXITED" ]
+then
+    docker rm $EXITED
+fi
