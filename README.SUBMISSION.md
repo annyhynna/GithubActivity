@@ -16,26 +16,30 @@ For `swap2.sh`, the address changes from `http://web1:8080/activity/` to `http:/
 B. Build the following images:
 1. `ng` (built from provided nginx-rev folder)
     ```
-    > cd ~IdeaProjects/GithubActivity/HW4/nginx-rev/
+    > cd ~
+    > cd IdeaProjects/GithubActivity/HW4/nginx-rev/
     > docker build -t ng .
     ```
 
 2. `activity` (built from original implementation of activity folder)
     ```
-    > cd ~IdeaProjects/GithubActivity/activity
+    > cd ~
+    > cd IdeaProjects/GithubActivity/activity
     > docker build -t activity .
     ```
     
 3. `new-activity` (built from updated implementation of activity folder)
     ```
-    > cd ~IdeaProjects/GithubActivity/activity
+    > cd ~
+    > cd IdeaProjects/GithubActivity/activity
     > docker build -t new-activity .
     ```
 
 C1. To do the hot-swap (without `doswap.sh`)
 1. Run `dorun.sh`, which starts the `docker-compose.yml` and `init.sh` to run two containers (`ng` and `web1`).
     ```
-    > cd ~IdeaProjects/GithubActivity/HW4
+    > cd ~
+    > cd IdeaProjects/GithubActivity/HW4
     > ./dorun.sh
     ```
 
@@ -79,7 +83,8 @@ C1. To do the hot-swap (without `doswap.sh`)
 C2. To do the hot-swap (with `doswap.sh`)
 1. Run `dorun.sh`, which starts the `docker-compose.yml` and `init.sh` to run two containers (`ng` and `web1`).
     ```
-    > cd ~IdeaProjects/GithubActivity/HW4
+    > cd ~
+    > cd IdeaProjects/GithubActivity/HW4
     > ./dorun.sh
     ```
 
